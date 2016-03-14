@@ -1,17 +1,17 @@
-function journalEntry (title, body) {
+function JournalEntry (title, body) {
   this.title = title;
   this.body = body;
 };
 
-journalEntry.prototype.wordCount = function() {
-  var wordTotal = 0;
+JournalEntry.prototype.wordCount = function() {
+  var wordTotal = 1;
 
-  for (var i=0; i < journalEntry.length; i++) {
-    if (journalEntry[i] === " ") {
-      wordTotal + 1;
-    }
-    else {
-      return wordTotal;
+  for (var i = 0; i < this.body.length; i++) {
+    if (this.body[i] === " ") {
+      wordTotal += 1;
     }
   }
-}
+  return wordTotal;
+};
+
+exports.JournalEntry = JournalEntry;
